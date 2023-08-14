@@ -635,7 +635,7 @@
               >
             </li>
             <li>
-              <a class="dropdown-item" href="sign-in-cover.html"
+              <a class="dropdown-item" href="{{ route('admin.logout') }}"
                 ><i class="fs-13 me-2 bx bx-arrow-to-right"></i>Log Out</a
               >
             </li>

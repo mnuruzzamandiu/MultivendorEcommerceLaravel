@@ -47,5 +47,10 @@ Route::middleware('auth')->group(function () {
 
 
 Route::get('/admin/login', [AdminController::class, 'adminLogin'])->name('admin.login');
+Route::get('/admin/form-input', [AdminController::class, 'formInput'])->name('admin.form-input');
+Route::get('/admin/form-layout', [AdminController::class, 'formLayout'])->name('admin.form-layout');
+Route::get('/admin/dataTable', [AdminController::class, 'dataTable'])->name('admin.dataTable');
+Route::get('/admin/salesDashboard', [AdminController::class, 'salesDashboard']);
+Route::get('/admin/logout', [AdminController::class, 'adminDestroy'])->name('admin.logout');
 
 require __DIR__ . '/auth.php';
