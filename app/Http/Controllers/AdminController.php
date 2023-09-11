@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,6 +22,12 @@ class AdminController extends Controller
     {
         return view('backend.form-input');
     }
+    public function adminProfile()
+    {
+        $id = Auth::user()->id;
+        $adminData = User::find($id);
+        return view('backend.admin.pages.profile',compact('adminData'));
+    }
 
     public function formLayout()
     {
@@ -29,9 +36,13 @@ class AdminController extends Controller
     public function dataTable()
     {
         return view('backend.data-table');
-    } public function salesDashboard()
+    }
+    public function salesDashboard()
     {
         return view('backend.salesDashboard');
+    } public function companyProfile()
+    {
+        return view('backend.companyProfile');
     }
 
     public function adminDestroy(Request $request)

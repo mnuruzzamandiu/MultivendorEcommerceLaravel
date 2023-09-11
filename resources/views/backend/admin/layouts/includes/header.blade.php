@@ -45,16 +45,7 @@
             </span>
           </a>
           <div class="main-header-center d-none d-lg-block header-link">
-            <input
-              type="text"
-              class="form-control"
-              id="typehead"
-              placeholder="Search for results..."
-              autocomplete="off"
-            />
-            <button type="button" aria-label="button" class="btn pe-1">
-              <i class="fe fe-search" aria-hidden="true"></i>
-            </button>
+
             <div id="headersearch" class="header-search">
               <div class="p-3">
                 <div class="">
@@ -601,7 +592,7 @@
                   <h6
                     class="font-weight-semibold mb-0 fs-13 user-name d-sm-block d-none"
                   >
-                    Harry Jones
+                   {{Auth::user()->name}}
                   </h6>
                 </div>
               </div>
@@ -613,7 +604,7 @@
             aria-labelledby="mainHeaderProfile"
           >
             <li>
-              <a class="dropdown-item border-bottom" href="profile.html"
+              <a class="dropdown-item border-bottom" href="{{ route('admin.profile') }}"
                 ><i class="fs-13 me-2 bx bx-user"></i>Profile</a
               >
             </li>

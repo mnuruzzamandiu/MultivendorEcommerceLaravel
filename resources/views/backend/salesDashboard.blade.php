@@ -1,19 +1,13 @@
 @extends('backend.admin.layouts.admin_master')
 @section('page_title', 'Form Input')
 @section('admin_master')
-    <div class="page-header-breadcrumb d-md-flex d-block align-items-center justify-content-between ">
-        <h4 class="fw-medium mb-0">Dashboard</h4>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="javascript:void(0);" class="text-white-50">Dashboards</a> </li>
-            <li class="breadcrumb-item active" aria-current="page">Sales</li>
-        </ol>
-    </div>
+
     <div class="main-content app-content">
         <div class="container-fluid"> <!-- Start::row-1 -->
             <div class="row">
-                <div class="col-xl-12">
-                    <div class="row row-cols-xxl-5 row-cols-xl-3 row-cols-md-2">
-                        <div class="col card-background">
+                <div class="col-lg-12">
+                    <div class="row ">
+                        <div class="col-lg-3 card-background">
                             <div class="card custom-card">
                                 <div class="card-body">
                                     <div class="d-flex">
@@ -31,7 +25,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col card-background">
+                        <div class="col-lg-3 card-background">
                             <div class="card custom-card">
                                 <div class="card-body">
                                     <div class="d-flex">
@@ -49,7 +43,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col card-background">
+                        <div class="col-lg-3 card-background">
                             <div class="card custom-card">
                                 <div class="card-body">
                                     <div class="d-flex">
@@ -67,7 +61,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col card-background">
+                        <div class="col-lg-3 card-background">
                             <div class="card custom-card">
                                 <div class="card-body">
                                     <div class="d-flex">
@@ -85,24 +79,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col card-background">
-                            <div class="card custom-card">
-                                <div class="card-body">
-                                    <div class="d-flex">
-                                        <div>
-                                            <p class="fw-medium text-muted mb-1">Active Subscribers</p>
-                                            <h3 class="mb-0">1,468</h3>
-                                        </div>
-                                        <div class="avatar avatar-md br-4 bg-danger-transparent ms-auto"> <i
-                                                class="bi bi-bell fs-20"></i> </div>
-                                    </div>
-                                    <div class="d-flex mt-2"> <span class="badge bg-danger-transparent rounded-pill">+16% <i
-                                                class="fe fe-arrow-down"></i></span> <a href="javascript:void(0);"
-                                            class="text-muted fs-11 ms-auto text-decoration-underline mt-auto">view more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
             </div> <!-- ROW-1 -->
@@ -294,7 +271,7 @@
                 </div>
                 <div class="col-xxl-6  col-xl-12">
                     <div class="row">
-                        
+
                         <div class="col-xxl-12 col-xl-12">
                             <div class="card custom-card overflow-hidden">
                                 <div class="card-header justify-content-between">

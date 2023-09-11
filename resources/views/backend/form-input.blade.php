@@ -1,17 +1,7 @@
 @extends('backend.admin.layouts.admin_master')
 @section('page_title', 'Form Input')
 @section('admin_master')
-    <div class="d-sm-flex d-block align-items-center justify-content-between page-header-breadcrumb"> <span
-            class="fs-semibold fs-18">Inputs</span>
-        <div class="ms-sm-1 ms-0">
-            <nav>
-                <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a href="javascript:void(0);">Form Elements</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Inputs</li>
-                </ol>
-            </nav>
-        </div>
-    </div>
+  
     <div class="main-content app-content">
         <div class="container-fluid"> <!-- Start:: row-1 -->
             <div class="row">

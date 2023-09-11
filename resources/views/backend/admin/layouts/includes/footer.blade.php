@@ -1,14 +1,13 @@
-<footer class="footer">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-6">
-                <script>document.write(new Date().getFullYear())</script> &copy; Vuesy.
-            </div>
-            <div class="col-sm-6">
-                <div class="text-sm-end d-none d-sm-block">
-                    Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesdesign
-                </div>
-            </div>
-        </div>
+<footer class="footer mt-auto py-3 bg-white text-center">
+    <div class="container">
+        <span class="text-muted">
+            Copyright © <span id="year">2023</span>
+            <a href="javascript:void(0);" class="text-dark fw-semibold">Velvet</a>. Designed with
+            <span class="bi bi-heart-fill text-danger"></span> by
+            <a href="javascript:void(0);">
+                <span class="fw-semibold text-primary text-decoration-underline">Spruko</span>
+            </a>
+            All rights reserved
+        </span>
     </div>
 </footer>
