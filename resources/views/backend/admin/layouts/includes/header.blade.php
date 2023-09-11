@@ -609,8 +609,8 @@
               >
             </li>
             <li>
-              <a class="dropdown-item border-bottom" href="mail.html"
-                ><i class="fs-13 me-2 bx bx-comment"></i>Message</a
+              <a class="dropdown-item border-bottom" href="{{ route('admin.change_password') }}"
+                ><i class="fs-13 me-2 bx bx-comment"></i>Change Password</a
               >
             </li>
             <li>

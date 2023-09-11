@@ -4927,14 +4927,14 @@ typography
   /* End::Card With FullScreen */
 }
 .card.custom-card .card-header {
-  padding: 1rem;
-  background-color: transparent !important;
-  -webkit-border-after: 1px solid var(--default-border);
-          border-block-end: 1px solid var(--default-border);
-  display: flex;
-  align-items: center;
-  position: relative;
-  flex-wrap: wrap;
+    padding: 12px 20px;
+    background-color: transparent !important;
+    -webkit-border-after: 1px solid var(--default-border);
+    border-block-end: 1px solid var(--default-border);
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
 }
 .card.custom-card .card-header:first-child {
   border-radius: 0.625rem 0.625rem 0 0;

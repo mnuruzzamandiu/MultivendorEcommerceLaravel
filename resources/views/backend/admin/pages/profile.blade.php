@@ -13,19 +13,13 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-xl-3 col-lg-4">
-                            <nav class="nav nav-tabs flex-column nav-style-5" role="tablist"> <a class="nav-link active"
-                                    data-bs-toggle="tab" role="tab" aria-current="page" href="#personal-info"
-                                    aria-selected="true"><i class="bx bx-cog me-2 fs-18 align-middle"></i>
-                                    Account Settings</a> <a class="nav-link mt-3" data-bs-toggle="tab" role="tab"
-                                    aria-current="page" href="#account-settings" aria-selected="false" tabindex="-1"><i
-                                        class="bx bx-coin-stack me-2 fs-18 align-middle"></i>Change Password</a> </nav>
-                        </div>
-                        <div class="col-xl-9 col-lg-8">
-                            <div class="tab-content mt-4 mt-lg-0">
-                                <div class="tab-pane text-muted active show" id="personal-info" role="tabpanel">
-                                    <div class="p-sm-3">
 
+                        <div class="col-xl-9 col-lg-8">
+
+                                    <div class="p-sm-3">
+                                        <form action="{{ route('admin.profile.update') }}" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                            @method('put')
                                         <div class="mb-4 d-sm-flex align-items-center">
                                             <div class="mb-0 me-sm-5 d-sm-flex align-items-center"> <span
                                                     class="avatar avatar-xxl "> <img
@@ -53,78 +47,49 @@
                                                 <label for="user-name" class="form-label">User
                                                     Name</label>
                                                 <input type="text" class="form-control"
-                                                    value="{{ $adminData->userName }}" id="user-name"
+                                                    value="{{ $adminData->userName }}" name="userName" id="user-name"
                                                     placeholder="User
                                                     Name"
-                                                    disabled>
+                                                    readonly>
                                             </div>
                                             <div class="col-xl-6">
                                                 <label for="full-name" class="form-label">Full
                                                     Name</label>
                                                 <input type="text" class="form-control"
-                                                    value="{{ $adminData->userName }}" id="full-name"
-                                                    placeholder="full-name">
+                                                    value="{{ $adminData->name }}" id="full-name"
+                                                    placeholder="full-name" name="name">
                                             </div>
                                             <div class="col-xl-6">
                                                 <label for="email" class="form-label">Email
                                                 </label>
                                                 <input type="email" value="{{ $adminData->email }}" class="form-control"
-                                                    id="email" placeholder="Email">
+                                                    id="email" placeholder="Email" name="email">
                                             </div>
                                             <div class="col-xl-6">
                                                 <label for="Phone" class="form-label">Phone
                                                 </label>
                                                 <input type="text" value="{{ $adminData->phone }}" class="form-control"
-                                                    id="Phone" placeholder="Phone">
+                                                    id="Phone" placeholder="Phone" name="phone">
                                             </div>
                                             <div class="col-xl-12">
                                                 <label for="address" class="form-label">Address
                                                 </label>
-                                                <textarea class="form-control" name="" id="address" rows="2">{{ $adminData->address }}</textarea>
+                                                <textarea class="form-control" name="address" id="address" rows="2">{{ $adminData->address }}</textarea>
                                             </div>
                                             <div class="col-xl-6">
                                                 <button class="btn btn-primary" type="submit">Update</button>
                                             </div>
 
                                         </div>
-
+                                    </form>
                                     </div>
-                                </div>
-                                <div class="tab-pane" id="account-settings" role="tabpanel">
-                                    <div class="row">
-                                        <div class="col-xl-7 col-lg-7">
-                                            <div class="card custom-card shadow-none mb-xl-0">
-                                                <div class="card-body">
 
 
-                                                    <div class=" align-items-top justify-content-between">
-                                                        <div>
-
-                                                            <div class="mb-2"> <label for="current-password"
-                                                                    class="form-label">Current Password</label> <input
-                                                                    type="text" class="form-control"
-                                                                    id="current-password" placeholder="Current Password">
-                                                            </div>
-                                                            <div class="mb-2"> <label for="new-password"
-                                                                    class="form-label">New Password</label> <input
-                                                                    type="text" class="form-control" id="new-password"
-                                                                    placeholder="New Password"> </div>
-                                                            <div class="mb-0"> <label for="confirm-password"
-                                                                    class="form-label">Confirm Password</label> <input
-                                                                    type="text" class="form-control"
-                                                                    id="confirm-password" placeholder="Confirm PAssword">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
+                                  
                                 </div>
 
 
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -141,7 +106,7 @@
       $('#preview-image').attr('src', e.target.result);
     }
     reader.readAsDataURL(this.files[0]);
-  
+
 
    });
   </script>
