@@ -32,6 +32,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin/logout', [AdminController::class, 'adminDestroy'])->name('admin.logout');
     Route::get('/admin/profile', [AdminController::class, 'adminProfile'])->name('admin.profile');
     Route::get('/admin/change-password', [AdminController::class, 'adminChangePassword'])->name('admin.change_password');
+    Route::put('/admin/change-password/update', [AdminController::class, 'adminUpdatePassword'])->name('admin.change_password.update');
     Route::put('/admin/profile/update', [AdminController::class, 'adminProfileUpdate'])->name('admin.profile.update');
     Route::get('/admin/logout', [AdminController::class, 'adminDestroy'])->name('admin.logout');
 });
