@@ -1,10 +1,10 @@
 @extends('backend.admin.layouts.admin_master')
 @section('page_title', 'Form Input')
 @section('admin_master')
-    <div class="main-content app-content">
+    <div class="main-content app-content mt-5">
         <div class="container-fluid"> <!-- Start::row-1 -->
-            <div class="row">
-                <div class="col-xxl-12 col-xl-12">
+            <div class="row" style="margin-top: 80px">
+                <div class="col-xxl-12 col-lg-12">
                     <div class="card custom-card overflow-hidden">
                         <div class="card-body d-sm-flex align-items-top p-4   main-profile-cover">
                             <p class="avatar avatar-xxl avatar-rounded online me-3 my-auto"> <img

@@ -9405,7 +9405,7 @@ body {
   min-height: 100vh;
 }
 .app-content {
-    margin-top: 100px !important;
+    margin-top: 10px !important;
     /* position:fixed !important; */
 }
 @media (min-width: 992px) {
