@@ -1,14 +1,12 @@
 @extends('backend.admin.layouts.admin_master')
 @section('page_title', 'Admin Dashboard')
 @section('admin_master')
-    
+
     <!-- Page Header Close -->
     <!-- Start::app-content -->
     <div class="main-content app-content">
-        <div class="container-fluid">
-
-
-            <div class="row">
+        <div class="container-fluid"> <!-- Start::row-1 -->
+            <div class="row" style="margin-top: 80px">
                 <div class="col-xxl-3 col-lg-3 col-sm-6">
                     <div class="card custom-card">
                         <div class="card-body">

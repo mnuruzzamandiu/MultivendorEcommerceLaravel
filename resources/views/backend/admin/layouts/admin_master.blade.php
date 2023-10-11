@@ -53,17 +53,17 @@
 
     <div class="page">
         <!-- app-header -->
-        @include('backend.admin.layouts.includes.header')
+        @include('backend.admin.includes.header')
         <!-- /app-header -->
         <!-- Start::app-sidebar -->
-        @include('backend.admin.layouts.includes.sidebar')
+        @include('backend.admin.includes.sidebar')
         <!-- End::app-sidebar -->
         <!-- Page Header -->
       @yield('admin_master')
         <!-- End::app-content -->
 
         <!-- Footer Start -->
-        @include('backend.admin.layouts.includes.footer')
+        @include('backend.admin.includes.footer')
         <!-- Footer End -->
 
 
