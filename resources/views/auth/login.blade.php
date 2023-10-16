@@ -21,7 +21,7 @@
                                     <div class="padding_eight_all bg-white">
                                         <div class="heading_s1">
                                             <h1 class="mb-5">Login</h1>
-                                            <p class="mb-30">Don't have an account? <a href="page-register.html">Create here</a></p>
+                                            <p class="mb-30">Don't have an account? <a href="{{ route('register') }}">Create here</a></p>
                                         </div>
                                         <form method="POST" class="row g-3" action="{{ route('login') }}">
                                             @csrf
@@ -48,7 +48,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-6 text-end"> <a
-                                                    href="auth-cover-forgot-password.html">Forgot Password ?</a>
+                                                    href="{{ route('password.request') }}">Forgot Password ?</a>
                                             </div>
                                             <div class="col-12">
                                                 <div class="d-grid">

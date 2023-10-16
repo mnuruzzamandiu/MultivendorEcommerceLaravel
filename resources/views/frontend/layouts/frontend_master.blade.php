@@ -65,6 +65,7 @@
     <!-- Template  JS -->
     <script src="{{ asset('contents/frontend') }}/assets/js/main.js?v=5.3"></script>
     <script src="{{ asset('contents/frontend') }}/assets/js/shop.js?v=5.3"></script>
+    @stack('scripts')
 </body>
 
 </html>
