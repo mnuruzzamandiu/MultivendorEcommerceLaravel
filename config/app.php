@@ -195,8 +195,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Flasher\Laravel\FlasherServiceProvider::class,
-        L5Swagger\L5SwaggerServiceProvider::class,
-
     ],
 
     /*

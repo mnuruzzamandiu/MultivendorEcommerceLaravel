@@ -42,8 +42,12 @@
                                             aria-selected="true"><i class="fi-rs-user mr-10"></i>Account details</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="page-login.html"><i
-                                                class="fi-rs-sign-out mr-10"></i>Logout</a>
+                                        <form action="{{ route('logout') }}" method="post">
+                                            @csrf
+                                            <button type="submit" class="nav-link" href=""><i
+                                                    class="fi-rs-sign-out mr-10"></i>Logout</button>
+                                        </form>
+
                                     </li>
                                 </ul>
                             </div>
@@ -55,6 +59,10 @@
                                     <div class="card">
                                         <div class="card-header">
                                             <h3 class="mb-0">Hello {{ Auth::user()->name }}</h3>
+                                            <br>
+                                            <img id="show-image"
+                                                src="{{ !empty($userData->photo) ? url('uploads/user_image/' . $userData->photo) : '' }}"
+                                                alt="">
                                         </div>
                                         <div class="card-body">
                                             <p>
@@ -189,9 +197,9 @@
                                         <div class="card-body">
 
                                             <form action="{{ route('user.profile.update') }}" method="POST"
-                                        enctype="multipart/form-data">
-                                        @csrf
-                                        @method('put')
+                                                enctype="multipart/form-data">
+                                                @csrf
+                                                @method('put')
                                                 <div class="row">
                                                     <div class="form-group col-md-6">
                                                         <label>User Name <span class="required">*</span></label>
@@ -225,7 +233,8 @@
                                                     </div>
                                                     <div class="form-group col-md-12">
                                                         <label> <span class="required">*</span></label>
-                                                        <img id="show-image" src="{{ (!empty($userData->photo)) ? url('uploads/user_image/' . $userData->photo) : '' }}"
+                                                        <img id="show-image"
+                                                            src="{{ !empty($userData->photo) ? url('uploads/user_image/' . $userData->photo) : '' }}"
                                                             alt="">
                                                     </div>
                                                     <div class="col-md-12">
