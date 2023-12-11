@@ -101,7 +101,7 @@ class AdminController extends Controller
         User::where('id', Auth::user()->id)->update([
             'password' => Hash::make($request->new_password),
         ]);
-        flash()->addSuccess(' Password Changes Successfully !!');
+        flash()->addSuccess('Password Changes Successfully !!');
         return redirect()->back();
     }
 }

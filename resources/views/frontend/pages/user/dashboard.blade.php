@@ -42,12 +42,13 @@
                                             aria-selected="true"><i class="fi-rs-user mr-10"></i>Account details</a>
                                     </li>
                                     <li class="nav-item">
-                                        <form action="{{ route('logout') }}" method="post">
-                                            @csrf
-                                            <button type="submit" class="nav-link" href=""><i
-                                                    class="fi-rs-sign-out mr-10"></i>Logout</button>
-                                        </form>
-
+                                        <a class="nav-link" id="change-password-tab" data-bs-toggle="tab"
+                                            href="#change-password" role="tab" aria-controls="change-password"
+                                            aria-selected="true"><i class="fi-rs-lock mr-10"></i>Change Password</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ route('user.logout') }}" class="nav-link" href=""><i
+                                                class="fi-rs-sign-out mr-10"></i>Logout</a>
                                     </li>
                                 </ul>
                             </div>
@@ -62,7 +63,7 @@
                                             <br>
                                             <img id="show-image"
                                                 src="{{ !empty($userData->photo) ? url('uploads/user_image/' . $userData->photo) : '' }}"
-                                                alt="">
+                                                alt="" height="80">
                                         </div>
                                         <div class="card-body">
                                             <p>
@@ -188,6 +189,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="tab-pane fade" id="account-detail" role="tabpanel"
                                     aria-labelledby="account-detail-tab">
                                     <div class="card">
@@ -235,8 +237,57 @@
                                                         <label> <span class="required">*</span></label>
                                                         <img id="show-image"
                                                             src="{{ !empty($userData->photo) ? url('uploads/user_image/' . $userData->photo) : '' }}"
-                                                            alt="">
+                                                            alt="" height="70">
                                                     </div>
+                                                    <div class="col-md-12">
+                                                        <button type="submit"
+                                                            class="btn btn-fill-out submit font-weight-bold"
+                                                            name="submit" value="Submit">Save Change</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="change-password" role="tabpanel"
+                                    aria-labelledby="change-password-tab ">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>Change Password</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <form action="{{ route('user.password.update') }}" method="POST"
+                                                enctype="multipart/form-data">
+                                                @csrf
+                                                @method('put')
+                                                <div class="row">
+                                                    <div class="form-group col-md-12">
+                                                        <label>Current Password <span class="required">*</span></label>
+                                                        <input
+                                                            class="form-control @error('current_password') is-invalid @enderror"
+                                                            name="current_password" id="current_password"
+                                                            type="password" />
+                                                        @error('current_password')
+                                                            <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
+                                                    </div>
+                                                    <div class="form-group col-md-12">
+                                                        <label>New Password <span class="required">*</span></label>
+                                                        <input
+                                                            class="form-control @error('new_password') is-invalid @enderror"
+                                                            name="new_password" id="current_password" type="password" />
+                                                        @error('new_password')
+                                                            <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
+                                                    </div>
+                                                    <div class="form-group col-md-12">
+                                                        <label>Confirm Password <span class="required">*</span></label>
+                                                        <input class="form-control " name="new_password_confirmation"
+                                                            id="new_password_confirmation" type="password" />
+
+                                                    </div>
+
+
                                                     <div class="col-md-12">
                                                         <button type="submit"
                                                             class="btn btn-fill-out submit font-weight-bold"

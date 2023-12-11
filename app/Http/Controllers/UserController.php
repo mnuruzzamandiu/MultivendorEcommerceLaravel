@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
 class UserController extends Controller
@@ -33,6 +34,36 @@ class UserController extends Controller
         }
         $data->save();
         flash()->addSuccess('User Profile Update Successfully');
+        return redirect()->back();
+    }
+
+    public function userLogOut(Request $request)
+    {
+        Auth::guard('web')->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/login');
+    }
+
+    public function userUpdatePassword(Request $request)
+    {
+        //validation
+        $request->validate([
+            'current_password' => 'required',
+            'new_password' => 'required|confirmed',
+        ]);
+
+        //match the old password
+        if (!Hash::check($request->current_password, auth()->user()->password)) {
+            flash()->addWarning('Current Password Does Not Match !!');
+            return redirect()->back();
+        }
+
+        //update new password
+        User::where('id', Auth::user()->id)->update([
+            'password' => Hash::make($request->new_password),
+        ]);
+        flash()->addSuccess('Password Changes Successfully !!');
         return redirect()->back();
     }
 }

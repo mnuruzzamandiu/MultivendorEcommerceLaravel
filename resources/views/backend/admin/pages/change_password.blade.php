@@ -17,7 +17,7 @@
 
 
                             <div class="p-sm-3">
-                                <form action="{{ route('admin.change_password.update') }}" method="POST">
+                                <form action="{{ route('admin.password.update') }}" method="POST">
                                     @csrf
                                     @method('put')
                                     <div class="mb-2">

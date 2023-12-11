@@ -25,6 +25,8 @@ Route::get('/', function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [UserController::class, 'userDashboard'])->name('dashboard');
     Route::put('/user/profile/update', [UserController::class, 'userProfileUpdate'])->name('user.profile.update');
+    Route::get('/user/logout', [UserController::class, 'userLogOut'])->name('user.logout');
+    Route::put('/user/password/update', [UserController::class, 'userUpdatePassword'])->name('user.password.update');
 });
 
 // Route::get('/dashboard', function () {
@@ -38,7 +40,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin/profile', [AdminController::class, 'adminProfile'])->name('admin.profile');
     Route::put('/admin/profile/update', [AdminController::class, 'adminProfileUpdate'])->name('admin.profile.update');
     Route::get('/admin/change-password', [AdminController::class, 'adminChangePassword'])->name('admin.change_password');
-    Route::put('/admin/change-password/update', [AdminController::class, 'adminUpdatePassword'])->name('admin.change_password.update');
+    Route::put('/admin/password/update', [AdminController::class, 'adminUpdatePassword'])->name('admin.password.update');
 
     Route::get('/admin/logout', [AdminController::class, 'adminDestroy'])->name('admin.logout');
 });
@@ -51,7 +53,7 @@ Route::middleware(['auth', 'role:seller'])->group(function () {
     Route::get('/seller/profile', [SellerController::class, 'sellerProfile'])->name('seller.profile');
     Route::put('/seller/profile/update', [SellerController::class, 'sellerProfileUpdate'])->name('seller.profile.update');
     Route::get('/seller/change-password', [SellerController::class, 'sellerChangePassword'])->name('seller.change_password');
-    Route::put('/seller/change-password/update', [SellerController::class, 'sellerUpdatePassword'])->name('seller.change_password.update');
+    Route::put('/seller/password/update', [SellerController::class, 'sellerUpdatePassword'])->name('seller.password.update');
 });
 
 Route::middleware('auth')->group(function () {
