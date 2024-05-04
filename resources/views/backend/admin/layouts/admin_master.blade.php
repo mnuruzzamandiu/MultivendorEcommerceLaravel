@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- saved from url=(0014)about:internet -->
 <html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="gradient"
-    data-menu-styles="light" data-vertical-style="detached">
+    data-menu-styles="dark" loader="disable" data-vertical-style="" data-arp-injected="">
 <!-- Mirrored from spruko.com/demo/velvet/velvet/dist/html/index-4.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 13 Aug 2023 18:42:19 GMT -->
 
 <head>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SellerController;
@@ -43,6 +44,10 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::put('/admin/password/update', [AdminController::class, 'adminUpdatePassword'])->name('admin.password.update');
 
     Route::get('/admin/logout', [AdminController::class, 'adminDestroy'])->name('admin.logout');
+
+    Route::controller(BrandController::class)->group(function(){
+
+    });
 });
 
 //seller dashboard
